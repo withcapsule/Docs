@@ -9,7 +9,29 @@ export default defineConfig({
     starlight({
       title: 'Capsule',
       social: [],
-      sidebar: [],
+      sidebar: [
+        {
+          label: 'Guides',
+          items: [
+            { label: 'Getting Started', slug: 'guides/getting-started' },
+            { label: 'Android', slug: 'guides/android' },
+            { label: 'Web', slug: 'guides/web' },
+            { label: 'CLI', slug: 'guides/cli' },
+          ],
+        },
+        {
+          label: 'API',
+          items: [
+            { label: 'Reference', slug: 'api/reference' },
+          ],
+        },
+        {
+          label: 'Self-Hosting',
+          items: [
+            { label: 'Setup', slug: 'self-hosting/setup' },
+          ],
+        },
+      ],
     }),
   ]
 });
