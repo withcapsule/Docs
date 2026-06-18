@@ -9,11 +9,15 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "deploy": "wrangler deploy",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.40.0",
     "astro": "^6.4.5"
+  },
+  "devDependencies": {
+    "wrangler": "4.101.0"
   }
 }
