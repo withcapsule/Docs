@@ -31,6 +31,8 @@ The current server behavior is fixed in code:
 ## Reverse proxy
 In practice you will usually place Capsule behind Caddy, nginx, or another reverse proxy and expose it over HTTPS. Point the proxy at the Capsule process on port `9001`.
 
+The simplest method is to run a Cloudflare Tunnel. Note that this will cap file sizes at 100 MB.
+
 ## Point clients at your server
 For the CLI:
 
@@ -38,7 +40,7 @@ For the CLI:
 capsule server set https://your-server.example.com
 ```
 
-The Android app also supports a custom server in its setup and settings flow.
+The Android app also supports a custom server in its setup flow and settings page, and it can ping that server to validate the address before you rely on it. If set up correctly, the ping should result in a `{ "message", "pong" }` response.
 
 ## Customizing behavior
-If you want different CORS origins, upload limits, or expiry rules, those are currently code changes rather than runtime config.
+If you want different CORS origins, upload limits, or expiry rules, those are currently code changes rather than runtime config. The server would have to be recompiled and restarted.

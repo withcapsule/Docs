@@ -3,22 +3,21 @@ title: API Reference
 description: HTTP endpoints exposed by the Capsule server.
 ---
 
-Capsule keeps the HTTP surface small on purpose. The API is enough to upload, inspect, download, and delete temporary files without introducing accounts or sessions.
+Capsule keeps the HTTP surface small on purpose. The core API is enough to upload, inspect, download, and delete temporary files without introducing accounts or sessions.
+
+For clarity: the public hosted web client lives at `https://withcapsule.dev`. The hosted API used by direct integrations and examples lives at `https://send.withcapsule.dev`.
 
 ## POST /curlup
 Uploads a file using multipart form data.
 
 - form field: `f`
-- optional query parameter: `encrypted=true`
 - success response: plain text containing the generated file ID
 
 Example:
 
 ```bash
-curl -F "f=@myfile.txt" "https://send.withcapsule.dev/curlup?encrypted=true"
+curl -F "f=@myfile.txt" "https://send.withcapsule.dev/curlup"
 ```
-
-The `encrypted` flag does not encrypt the file on the server. It only marks the upload so clients know they should prompt for decryption later.
 
 ## GET /download/:file_id
 Streams the file back with its original filename.
@@ -42,16 +41,13 @@ Returns metadata for a file without downloading it.
 }
 ```
 
-## GET /delete/:file_id
+## DELETE /delete/:file_id
 Deletes a file immediately and removes its database record.
 
 ## GET /ping
 Simple health check that returns a JSON `pong` response.
 
-## Rate limits and limits
-- default request limit: `20 req/s` per IP
-- `/curlup`: `2 req/s` per IP
-- `/html_upload_processor`: `1 req/s` per IP
-- `/html_download_processor`: `1 req/s` per IP
-- `429` responses include `Retry-After: 1`
-- upload body limit: `256 MB`
+## GET /
+Returns a minimal built-in HTML menu with links to the server's simple upload and download forms.
+
+Highly applicable for LAN usage.

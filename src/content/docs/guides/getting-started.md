@@ -4,11 +4,11 @@ description: Send your first file with Capsule in under a minute.
 ---
 
 ## What is Capsule?
-Capsule is a simple file transfer service for the Web, Android, and servers via CLI. For when LAN file sharing isn't an option, you don't want to deal with cloud storage accounts, and don't trust a random person's cloud. Capsule is designed for quick, temporary file transfers. No account needed, no long-term storage, and (via the CLI) full end-to-end encryption.
+Capsule is a simple file transfer service for the Web, Android, and servers via CLI. For when LAN file sharing isn't an option, you don't want to deal with cloud storage accounts, and don't trust a random person's cloud. Capsule is designed for quick, temporary file transfers. No account needed, no long-term storage, and client-side encryption is available in both the Android app and the CLI.
 
 ## How does it work?
 1. Upload a file from any device. If you are on Android or in a Terminal, you can also choose to encrypt the file with a decryption key that only you have access to.
-2. The server generates both a download link and QR code.
+2. The server returns a file ID and download URL. Capsule clients can turn that into a QR code for easier cross-device handoff.
 3. Download the file from another device using the link or by scanning the QR code through your system camera or the Android app.
 4. If you elected to encrypt, the file will be completely unreadable and only your decryption key can unscramble it. The CLI provides options to view the decryption key as a QR code, or view it as text. Once the keys are made visible, pressing any key on the keyboard will exit the tool and wipe the terminal screen clean.
     * The Android app can also encrypt and decrypt files, and supports reading the decryption key from the CLI-provided decryption QR code.
@@ -20,7 +20,7 @@ Capsule is a simple file transfer service for the Web, Android, and servers via 
 - Use the [CLI](/guides/cli/) when you want scripting, self-hosting support, or encrypted terminal transfers.
 
 ## First transfer
-The quickest way to try Capsule is with the hosted service:
+The quickest way to try Capsule is with the hosted service. The public web UI lives at `https://withcapsule.dev`, while direct HTTP examples use the hosted API at `https://send.withcapsule.dev`:
 
 ```bash
 curl -F "f=@photo.jpg" https://send.withcapsule.dev/curlup

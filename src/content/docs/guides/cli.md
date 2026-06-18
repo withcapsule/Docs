@@ -48,12 +48,24 @@ Options:
 ```
 
 ## Configuration
-The CLI keeps a small local state directory with the active server URL and the last 15 transfers. For one-off commands, `--server <url>` overrides the saved server without changing it permanently.
+The CLI keeps a small local state directory with the active server URL and the last 15 transfers. It uses your platform data directory via `dirs::data_dir()`, and stores:
+
+- `capsule/server.txt` for the saved default server
+- `capsule/history.json` for recent transfers
+
+For one-off commands, `--server <url>` overrides the saved server without changing it permanently.
 
 ## Global options
 `capsule --server <url> <command>` sends a single command to a specific Capsule server without changing the saved default.
 
 `capsule --help` prints the command list, and `capsule --version` prints the current CLI version.
+
+## Shell completions
+The CLI also supports completion generation:
+
+`capsule completions <shell>`
+
+Supported shells are `bash`, `elvish`, `fish`, `powershell`, and `zsh`. The command prints the completion script to stdout so you can place it wherever your shell expects completions.
 
 ## Commands
 #### `ping` (`p`)
