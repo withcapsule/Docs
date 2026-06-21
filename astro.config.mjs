@@ -31,6 +31,13 @@ export default defineConfig({
             { label: 'Setup', slug: 'self-hosting/setup' },
           ],
         },
+        {
+          label: 'Legal',
+          items: [
+            { label: 'Privacy Policy', slug: 'privacy' },
+            { label: 'Terms of Service', slug: 'terms' },
+          ],
+        },
       ],
     }),
   ]
