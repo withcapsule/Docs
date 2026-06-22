@@ -9,6 +9,20 @@ export default defineConfig({
     starlight({
       title: 'Capsule',
       social: [],
+      head: [
+        {
+          tag: 'script',
+          content: `((window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)}),(plausible.init=plausible.init||function(i){plausible.o=i||{}}));plausible.init();`,
+        },
+        {
+          tag: 'script',
+          attrs: { defer: true, src: '/p.js' },
+        },
+        {
+          tag: 'script',
+          attrs: { defer: true, src: '/u.js', 'data-website-id': 'c7715639-99fc-407e-9e97-513b63db8410', 'data-api': '/cdn/u' },
+        },
+      ],
       sidebar: [
         {
           label: 'Guides',
