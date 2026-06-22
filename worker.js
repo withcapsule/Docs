@@ -12,7 +12,7 @@ export default {
 		}
 
 		if (url.pathname === "/u.js") {
-			const res = await fetch("https://au.byseansingh.com/script.js");
+			const res = await fetch("https://au.withcapsule.dev/script.js");
 			const headers = new Headers(res.headers);
 			headers.set("Cache-Control", "public, max-age=86400");
 			return new Response(res.body, { status: res.status, headers });
@@ -26,7 +26,7 @@ export default {
 			);
 			headers.delete("host");
 
-			return fetch("https://au.byseansingh.com/api/send", {
+			return fetch("https://au.withcapsule.dev/api/send", {
 				method: request.method,
 				headers,
 				body: request.body,
