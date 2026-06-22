@@ -5,7 +5,7 @@ description: HTTP endpoints exposed by the Capsule server.
 
 Capsule keeps the HTTP surface small on purpose. The core API is enough to upload, inspect, download, and delete temporary files without introducing accounts or sessions.
 
-For clarity: the public hosted web client lives at `https://withcapsule.dev`. The hosted API used by direct integrations and examples lives at `https://send.withcapsule.dev`.
+Examples below use the hosted API at `https://send.withcapsule.dev`. See [Getting Started](/guides/getting-started/#first-transfer) for the distinction between the API host and the web client.
 
 ## POST /curlup
 Uploads a file using multipart form data.

@@ -74,17 +74,22 @@ for a final "opted out" signal.
 ### What analytics events contain
 
 Each event records the in-app screen path (for example `/upload`, `/download`,
-`/settings`) and an action name (for example `app_launched`, `upload_success`,
-`download_error`). Umami may also record general technical information such as:
+`/settings`), an action name (for example `app_launched`, `upload_success`,
+`download_error`), and your device's screen resolution.
 
-- device type, operating system and version,
-- an approximate region/country derived from your IP address.
+Once per session, the app also records two device attributes so
+we can understand what hardware the app runs on:
 
-Consistent with how Umami works, **your IP address is not stored**; it is used
-only momentarily to derive an approximate region and is then immediately and completely
-discarded. Umami does not use tracking cookies, and unique-visitor counts are based on a
-daily-rotating, salted hash rather than a persistent identifier. There is no
-stable identifier that ties events back to you across days.
+- device model
+- Android version
+
+Your approximate region/country is also derived on our server from the network
+connection your request arrives on. Consistent with how Umami works, **your IP
+address is not stored**; it is used only momentarily to derive an approximate
+region and is then immediately and completely discarded. Umami does not use
+tracking cookies, and unique-visitor counts are based on a daily-rotating, salted
+hash rather than a persistent identifier. There is no stable identifier that ties
+events back to you across days.
 
 ### Non-identifying attributes on some events
 

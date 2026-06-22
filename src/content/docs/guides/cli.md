@@ -34,10 +34,10 @@ Commands:
   upload            Upload a file to the server [aliases: u]
   upload-encrypted  Locally encrypt a file, then upload a file to the server [aliases: ue]
   download          Download a recently uploaded file [aliases: d]
-  status            Show metadata for an uploaded file [aliases: s]
+  status            Show status and metadata for an uploaded file [aliases: s]
   recents           Show recent uploads and downloads, --help for more [aliases: r]
   delete            Delete a file by ID [aliases: del]
-  server            Manage the server address [aliases: srv]
+  server            Manage the server address [aliases: sv]
   help              Print this message or the help of the given subcommand(s)
 
 Options:
@@ -48,7 +48,7 @@ Options:
 ```
 
 ## Configuration
-The CLI keeps a small local state directory with the active server URL and the last 15 transfers. It uses your platform data directory via `dirs::data_dir()`, and stores:
+The CLI keeps a small local state directory with the active server URL and your recent transfers. It uses your platform data directory via `dirs::data_dir()`, and stores:
 
 - `capsule/server.txt` for the saved default server
 - `capsule/history.json` for recent transfers
@@ -101,13 +101,13 @@ Deletes a file from the server before it expires naturally.
 #### `recents` (`r`)
 `capsule recents`
 
-Shows the last 15 local uploads and downloads.
+Shows recent uploads + downloads history.
 
 `capsule recents clear`
 
 Clears the local history file.
 
-#### `server` (`srv`)
+#### `server` (`sv`)
 `capsule server info`
 
 Shows the currently active server URL.
@@ -121,4 +121,4 @@ Stores a custom default server address.
 Restores the default hosted server, `https://send.withcapsule.dev`.
 
 ## Encryption model
-Encrypted uploads are handled on the client before the server sees the file. The generated 12-word mnemonic is the key, and Capsule does not store it for you.
+Encryption happens entirely on the client; see [how it works](/guides/getting-started/#how-does-it-work) for the shared model and the rules around the 12-word mnemonic. In the CLI specifically, `upload-encrypted` encrypts before upload and `download` prompts for the mnemonic when a file is marked encrypted.

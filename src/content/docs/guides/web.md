@@ -5,8 +5,6 @@ description: Upload and download files from the browser without installing anyth
 
 The hosted web client lives at `https://withcapsule.dev`. It is the intended public-facing browser entry point for Capsule, and it is the quickest way to try the project because there is nothing to install and the flow is deliberately simple.
 
-The hosted API that backs examples and direct client integrations lives separately at `https://send.withcapsule.dev`. That API host is not the hosted web client.
-
 ## Sending a file
 Choose a file, upload it, and wait for the transfer to finish. The page returns a file ID and a QR code pointing at the download URL, which makes cross-device handoff easy.
 
