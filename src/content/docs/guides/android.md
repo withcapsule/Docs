@@ -53,7 +53,7 @@ This section is for developers who want to build the Android client from source 
 ### Project details
 
 - **Package:** `dev.withcapsule.android`
-- **Mininum SDK:** 29 (Android 10 "Quince Tart")
+- **Minimum SDK:** 29 (Android 10 "Quince Tart")
 - **[Target SDK](https://apilevels.com/):** 36 (Android 16 "Baklava")
 
 ### Tech stack
@@ -75,7 +75,7 @@ app/src/main/java/dev/withcapsule/android/
 ├── Analytics.kt             # AnalyticsManager
 ├── data/
 │   ├── local/               # SettingsRepository (DataStore: settings + history)
-│   └── remote/              # ApiService (Retrofit)
+│   └── remote/              # ApiService (Retrofit), RetrofitClient
 └── ui/
     ├── screens/             # Upload, Download, History, Settings, Onboarding
     ├── components/          # Shared composables
