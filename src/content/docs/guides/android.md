@@ -10,19 +10,19 @@ Click any screenshot to open the full-size image.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;align-items:start;">
   <a href="/images/android/Android_Send.png" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="/images/android/Android_Send.png" alt="Capsule Android send screen" style="width:100%;max-width:280px;height:auto;border-radius:12px;" />
+    <img src="/images/android/thumbs/Android_Send.webp" alt="Capsule Android send screen" style="width:100%;max-width:280px;height:auto;border-radius:12px;" />
     <div style="margin-top:0.5rem;font-size:0.95rem;">Send</div>
   </a>
   <a href="/images/android/Android_Receive.png" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="/images/android/Android_Receive.png" alt="Capsule Android receive screen" style="width:100%;max-width:280px;height:auto;border-radius:12px;" />
+    <img src="/images/android/thumbs/Android_Receive.webp" alt="Capsule Android receive screen" style="width:100%;max-width:280px;height:auto;border-radius:12px;" />
     <div style="margin-top:0.5rem;font-size:0.95rem;">Receive</div>
   </a>
   <a href="/images/android/Android_History.png" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="/images/android/Android_History.png" alt="Capsule Android history screen" style="width:100%;max-width:280px;height:auto;border-radius:12px;" />
+    <img src="/images/android/thumbs/Android_History.webp" alt="Capsule Android history screen" style="width:100%;max-width:280px;height:auto;border-radius:12px;" />
     <div style="margin-top:0.5rem;font-size:0.95rem;">History</div>
   </a>
   <a href="/images/android/Android_Settings.png" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="/images/android/Android_Settings.png" alt="Capsule Android settings screen" style="width:100%;max-width:280px;height:auto;border-radius:12px;" />
+    <img src="/images/android/thumbs/Android_Settings.webp" alt="Capsule Android settings screen" style="width:100%;max-width:280px;height:auto;border-radius:12px;" />
     <div style="margin-top:0.5rem;font-size:0.95rem;">Settings</div>
   </a>
 </div>
