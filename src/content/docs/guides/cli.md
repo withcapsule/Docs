@@ -6,18 +6,19 @@ description: Install, configure, and use the Capsule CLI.
 The Capsule CLI is the most capable client. It is aimed at terminal-first workflows where a browser would be inconvenient or too limited.
 
 ## Installation
-#### Via `brew`
-This repository includes a Homebrew formula under `homebrew-capsule/` for a tap-based install flow for Linux and MacOS.
-```
-brew tap withcapsule/capsule
-```
-Followed by:
-```
+
+#### MacOS & Linux (via Homebrew)
+```sh
 brew install capsule
 ```
 
+#### Fedora 43+ (via COPR)
+```sh
+sudo dnf copr enable seanathan/capsule
+sudo dnf install capsule
+```
 
-#### Via Source
+#### From source
 From the `CLI` directory:
 ```bash
 cargo install --path .
