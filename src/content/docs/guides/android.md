@@ -83,7 +83,7 @@ app/src/main/java/dev/withcapsule/android/
     └── theme/               # Color, Type, Theme (light/dark/system)
 ```
 
-The server API (`data/remote/ApiService.kt`) is small: `ping`, `curlup` (upload), `download/{id}`, `status/{id}`, and `delete/{id}`.
+The server API (`data/remote/ApiService.kt`) is small: `ping`, `upload`, `download/{id}`, `status/{id}`, and `delete/{id}`.
 
 ### Building and running
 

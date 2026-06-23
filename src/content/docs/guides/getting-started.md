@@ -23,7 +23,7 @@ Capsule is a simple file transfer service for the Web, Android, and servers via 
 The quickest way to try Capsule is with the hosted service. Capsule has two hosted addresses: the public web UI at `https://withcapsule.dev`, and the API that backs direct HTTP calls and client integrations at `https://send.withcapsule.dev`. The API host is not the web client. Direct examples throughout these docs use the API host:
 
 ```bash
-curl -F "f=@photo.jpg" https://send.withcapsule.dev/curlup
+curl -F "f=@photo.jpg" https://send.withcapsule.dev/upload
 ```
 
 The response includes a short file ID. Anyone with that ID or the full download URL can fetch the file until it expires or is deleted.

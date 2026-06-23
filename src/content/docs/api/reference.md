@@ -7,7 +7,7 @@ Capsule keeps the HTTP surface small on purpose. The core API is enough to uploa
 
 Examples below use the hosted API at `https://send.withcapsule.dev`. See [Getting Started](/guides/getting-started/#first-transfer) for the distinction between the API host and the web client.
 
-## POST /curlup
+## POST /upload
 Uploads a file using multipart form data.
 
 - form field: `f`
@@ -16,7 +16,7 @@ Uploads a file using multipart form data.
 Example:
 
 ```bash
-curl -F "f=@myfile.txt" "https://send.withcapsule.dev/curlup"
+curl -F "f=@myfile.txt" "https://send.withcapsule.dev/upload"
 ```
 
 ## GET /download/:file_id
