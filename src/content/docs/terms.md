@@ -66,6 +66,9 @@ You agree not to use the Service to:
 We may, with respect to the hosted service, remove content or restrict access
 that we reasonably believe violates these Terms or applicable law.
 
+To report a violation or abusive content on the hosted service, email
+abuse@withcapsule.dev.
+
 ## 5. Availability, retention, and expiry
 
 The hosted service is provided on a best-effort basis. We do not guarantee that
@@ -153,4 +156,5 @@ publishing.*
 For questions about these Terms, contact:
 
 - **Email:** legal@withcapsule.dev
+- **Abuse / content reports:** abuse@withcapsule.dev
 - **Project:** the Capsule repository / documentation site

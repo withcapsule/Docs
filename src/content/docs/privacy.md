@@ -195,5 +195,6 @@ the date atop this page, publishing the revised policy, and via app release note
 
 For privacy questions or requests:
 
-- **Email** - privacy@withcapsule.dev
+- **Privacy questions** - privacy@withcapsule.dev
+- **Abuse / content reports** - abuse@withcapsule.dev
 - **Project** - open a public issue in the withcapsule/Android repository

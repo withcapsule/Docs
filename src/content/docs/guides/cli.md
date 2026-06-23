@@ -6,18 +6,19 @@ description: Install, configure, and use the Capsule CLI.
 The Capsule CLI is the most capable client. It is aimed at terminal-first workflows where a browser would be inconvenient or too limited.
 
 ## Installation
-#### Via `brew`
-This repository includes a Homebrew formula under `homebrew-capsule/` for a tap-based install flow for Linux and MacOS.
-```
-brew tap withcapsule/capsule
-```
-Followed by:
-```
+
+#### MacOS & Linux (via Homebrew)
+```sh
 brew install capsule
 ```
 
+#### Fedora 43+ (via COPR)
+```sh
+sudo dnf copr enable seanathan/capsule
+sudo dnf install capsule
+```
 
-#### Via Source
+#### From source
 From the `CLI` directory:
 ```bash
 cargo install --path .
@@ -60,12 +61,38 @@ For one-off commands, `--server <url>` overrides the saved server without changi
 
 `capsule --help` prints the command list, and `capsule --version` prints the current CLI version.
 
-## Shell completions
-The CLI also supports completion generation:
+<!--## Shell completions
 
-`capsule completions <shell>`
+`capsule completions <shell>` prints a completion script to stdout. Write it to the appropriate file for your shell and it will be sourced automatically — no rc file edits needed.
 
-Supported shells are `bash`, `elvish`, `fish`, `powershell`, and `zsh`. The command prints the completion script to stdout so you can place it wherever your shell expects completions.
+**Bash**
+```sh
+capsule completions bash > ~/.local/share/bash-completion/completions/capsule
+```
+
+**Zsh**
+```sh
+mkdir -p ~/.zfunc
+capsule completions zsh > ~/.zfunc/_capsule
+```
+Add these two lines to `~/.zshrc` once if not already present:
+```sh
+fpath=(~/.zfunc $fpath)
+autoload -Uz compinit && compinit
+```
+
+**Fish** (auto-sourced, no setup needed)
+```sh
+capsule completions fish > ~/.config/fish/completions/capsule.fish
+```
+
+**PowerShell**
+```powershell
+capsule completions powershell > "$HOME/Documents/PowerShell/completions/capsule.ps1"
+. "$HOME/Documents/PowerShell/completions/capsule.ps1"
+```
+
+Supported shells: `bash`, `zsh`, `fish`, `powershell`, `elvish`.-->
 
 ## Commands
 #### `ping` (`p`)
