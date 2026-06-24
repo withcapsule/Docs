@@ -37,7 +37,21 @@
 		}
 
 		if (btn && btn.closest(".expressive-code")) {
-			track("Code Copy", { page: location.pathname });
+			const ec = btn.closest(".expressive-code");
+			let heading = null;
+			let node = ec;
+			outer: while (node) {
+				let sib = node.previousElementSibling;
+				while (sib) {
+					if (/^h[2-6]$/i.test(sib.tagName)) {
+						heading = sib.textContent.trim();
+						break outer;
+					}
+					sib = sib.previousElementSibling;
+				}
+				node = node.parentElement;
+			}
+			track("Code Copy", { page: location.pathname, ...(heading ? { section: heading } : {}) });
 		}
 	});
 })();

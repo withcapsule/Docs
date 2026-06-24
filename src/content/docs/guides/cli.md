@@ -7,7 +7,27 @@ The Capsule CLI is the most capable client. It is aimed at terminal-first workfl
 
 ## Installation
 
-#### MacOS & Linux (via Homebrew)
+#### macOS (install script)
+```sh
+curl -fsSL https://withcapsule.dev/install-macos.sh | sh
+```
+
+#### Linux (install script)
+```sh
+curl -fsSL https://withcapsule.dev/install-linux.sh | sh
+```
+
+Both scripts detect your architecture (x86_64 or ARM64), download the latest release binary from GitHub, and install it to `~/.local/bin`. No root required.
+
+#### Windows (install script)
+Run in PowerShell:
+```powershell
+irm https://withcapsule.dev/install.ps1 | iex
+```
+
+Detects x86_64 or ARM64, downloads the binary to `%LOCALAPPDATA%\Programs\capsule\`, and adds it to your user PATH.
+
+#### macOS & Linux (via Homebrew)
 ```sh
 brew install capsule
 ```
