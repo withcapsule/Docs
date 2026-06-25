@@ -44,6 +44,26 @@ From the `CLI` directory:
 cargo install --path .
 ```
 
+## Uninstallation
+
+#### macOS
+```sh
+curl -fsSL https://withcapsule.dev/uninstall-macos.sh | sh
+```
+
+#### Linux
+```sh
+curl -fsSL https://withcapsule.dev/uninstall-linux.sh | sh
+```
+
+#### Windows
+Run in PowerShell:
+```powershell
+irm https://withcapsule.dev/uninstall.ps1 | iex
+```
+
+For Homebrew installs: `brew uninstall capsule`. For COPR: `sudo dnf remove capsule`.
+
 ## Interface
 ```
 CLI for the Capsule server
