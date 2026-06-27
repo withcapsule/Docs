@@ -26,7 +26,7 @@ The quickest way to try Capsule is with the hosted service. Capsule has two host
 curl -F "f=@photo.jpg" https://send.withcapsule.dev/upload
 ```
 
-The response includes a short file ID. Anyone with that ID or the full download URL can fetch the file until it expires or is deleted.
+The response includes a memorable file ID made of three short words joined by hyphens, such as `duck-view-time` — easy to read aloud or retype on another device. Anyone with that ID or the full download URL can fetch the file until it expires or is deleted. IDs are matched case-insensitively, so `Duck-View-Time` works just as well.
 
 ## What Capsule is good at
 Capsule works best for short-lived file handoffs: moving logs off a server, sending a file from a phone to a laptop, or sharing a one-off download.

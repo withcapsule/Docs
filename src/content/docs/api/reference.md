@@ -12,16 +12,17 @@ Uploads a file using multipart form data.
 
 - form field: `f`
 - query param: `encrypted` (`true` / `false`, default `false`) - used to mark the file as client-side encrypted
-- success response: plain text containing the generated file ID
+- success response: plain text containing the generated file ID. The ID is three short words joined by hyphens, such as `duck-view-time`.
 
 Example:
 
 ```bash
 curl -F "f=@myfile.txt" "https://send.withcapsule.dev/upload"
+# Success, uploaded myfile.txt of 1234 bytes. File ID for downloading is duck-view-time.
 ```
 
 ## GET /download/:file_id
-Streams the file back with its original filename.
+Streams the file back with its original filename. The `:file_id` is matched case-insensitively.
 
 Relevant response headers:
 
