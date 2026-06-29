@@ -5,64 +5,66 @@ description: Install, configure, and use the Capsule CLI.
 
 The Capsule CLI is the most capable client. It is aimed at terminal-first workflows where a browser would be inconvenient or too limited.
 
-## Installation
+## Install & uninstall
 
-#### macOS (install script)
+Pick the method for your platform. The CLI installs to a per-user location, so no method requires root, and each method's uninstall is listed right alongside it.
+
+### Install script
+Detects your architecture (x86_64 or ARM64) and downloads the latest release binary from GitHub.
+
+##### macOS
+Installs to `~/.local/bin`
 ```sh
-curl -fsSL https://withcapsule.dev/install-macos.sh | sh
+curl -fsSL https://withcapsule.dev/install-macos.sh | sh      # install
 ```
-
-#### Linux (install script)
 ```sh
-curl -fsSL https://withcapsule.dev/install-linux.sh | sh
+curl -fsSL https://withcapsule.dev/uninstall-macos.sh | sh    # uninstall
 ```
 
-Both scripts detect your architecture (x86_64 or ARM64), download the latest release binary from GitHub, and install it to `~/.local/bin`. No root required.
-
-#### Windows (install script)
-Run in PowerShell:
-```powershell
-irm https://withcapsule.dev/install.ps1 | iex
-```
-
-Detects x86_64 or ARM64, downloads the binary to `%LOCALAPPDATA%\Programs\capsule\`, and adds it to your user PATH.
-
-#### macOS & Linux (via Homebrew)
+##### Linux
+Installs to `~/.local/bin`
 ```sh
-brew install capsule
+curl -fsSL https://withcapsule.dev/install-linux.sh | sh      # install
 ```
-
-#### Fedora 43+ (via COPR)
 ```sh
-sudo dnf copr enable seanathan/capsule
-sudo dnf install capsule
+curl -fsSL https://withcapsule.dev/uninstall-linux.sh | sh    # uninstall
 ```
 
-#### From source
+##### Windows
+Installs to `%LOCALAPPDATA%\Programs\capsule\` and adds it to your user PATH (run in PowerShell)
+```sh
+irm https://withcapsule.dev/install.ps1 | iex      # install
+```
+```sh
+irm https://withcapsule.dev/uninstall.ps1 | iex    # uninstall
+```
+
+### Homebrew (macOS, Linux)
+```sh
+brew tap withcapsule/capsule  # enable the Capsule repository
+brew install capsule          # install
+```
+```sh
+brew uninstall capsule    # uninstall
+```
+
+### COPR (Fedora 43+)
+```sh
+sudo dnf copr enable seanathan/capsule  # enable the COPR repository
+sudo dnf install capsule                # install
+```
+```sh
+sudo dnf remove capsule
+```
+
+### From source
 From the `CLI` directory:
-```bash
-cargo install --path .
-```
-
-## Uninstallation
-
-#### macOS
 ```sh
-curl -fsSL https://withcapsule.dev/uninstall-macos.sh | sh
+cargo install --path .         # install
 ```
-
-#### Linux
 ```sh
-curl -fsSL https://withcapsule.dev/uninstall-linux.sh | sh
+cargo uninstall capsule-cli    # uninstall
 ```
-
-#### Windows
-Run in PowerShell:
-```powershell
-irm https://withcapsule.dev/uninstall.ps1 | iex
-```
-
-For Homebrew installs: `brew uninstall capsule`. For COPR: `sudo dnf remove capsule`.
 
 ## Interface
 ```
@@ -82,10 +84,9 @@ Commands:
   help              Print this message or the help of the given subcommand(s)
 
 Options:
-      --server <SERVER>  
+      --server <SERVER>
   -h, --help             Print help
   -V, --version          Print version
-
 ```
 
 ## Configuration
@@ -188,4 +189,4 @@ Stores a custom default server address.
 Restores the default hosted server, `https://send.withcapsule.dev`.
 
 ## Encryption model
-Encryption happens entirely on the client; see [how it works](/guides/getting-started/#how-does-it-work) for the shared model and the rules around the 12-word mnemonic. In the CLI specifically, `upload-encrypted` encrypts before upload and `download` prompts for the mnemonic when a file is marked encrypted.
+Encryption happens entirely on the client; see [how it works](/guides/getting-started/#how-does-it-work) for the shared model and the rules around the 12-word mnemonic. In the CLI specifically, `upload-encrypted` encrypts before upload and `download` prompts for the mnemonic when a file is marked encrypted. After encrypting, the CLI can display the mnemonic as text or a QR code; once it is on screen, pressing any key wipes the terminal.

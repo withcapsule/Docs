@@ -38,13 +38,9 @@ Paste a file ID or full download URL into the app to fetch a file. Downloads can
 The app can also scan a QR code containing an ID, a download link, or a decryption key.
 
 ## Encrypted transfers
-Android supports all parts of the encrypted process:
+The app handles the full encryption flow: it encrypts before upload, detects encrypted downloads automatically (via the server's `X-Encrypted` response header), and prompts for the 12-word mnemonic before decrypting. As with every Capsule client, the mnemonic is never stored (see [how encryption works](/guides/getting-started/#how-does-it-work)).
 
-- encrypt before upload
-- detect encrypted downloads automatically (via the server's `X-Encrypted` response header)
-- prompt for the 12-word mnemonic before decrypting
-
-The app also includes local transfer history and custom server configuration, which makes it usable against both the hosted Capsule service and self-hosted instances. As with every Capsule client, the mnemonic is never stored (see [how encryption works](/guides/getting-started/#how-does-it-work)).
+It also keeps a local transfer history and supports custom server configuration, so it works against both the hosted Capsule service and self-hosted instances.
 
 ## Building and contributing
 
