@@ -57,6 +57,15 @@ sudo dnf install capsule                # install
 sudo dnf remove capsule
 ```
 
+### Scoop (Windows)
+```sh
+scoop bucket add capsule https://github.com/withcapsule/scoop-capsule  # enable the Capsule bucket
+scoop install capsule                                                  # install
+```
+```sh
+scoop uninstall capsule    # uninstall
+```
+
 ### From source
 From the `CLI` directory:
 ```sh

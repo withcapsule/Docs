@@ -26,3 +26,6 @@ The crypto runs from a self-hosted bundle (no third-party CDN) built on [typage]
 
 ## Scope
 The web client supports encryption and decryption, but it is still intentionally simple: it does not keep a saved transfer history nor any integration. For more features, use the [CLI](/guides/cli/) or [Android app](/guides/android/).
+
+## Source & license
+Capsule is open source. The [server](https://github.com/withcapsule/Server) is licensed under **AGPL-3.0** — if you run a modified version as a network service, you must make your source available to its users. The clients (this web UI, the [CLI](https://github.com/withcapsule/CLI), and the [Android app](https://github.com/withcapsule/Android)) are licensed under the permissive **MIT** license.
