@@ -67,15 +67,17 @@ This section is for developers who want to build the Android client from source 
 
 ```
 app/src/main/java/dev/withcapsule/android/
-├── MainActivity.kt          # Entry point, navigation host, share-intent handling
+├── MainActivity.kt          # Entry point, NavHost (Upload/Download/History/Settings/QRScanner), onboarding gate, share-intent handling
+├── CapsuleApp.kt            # @HiltAndroidApp Application class
 ├── Analytics.kt             # AnalyticsManager
+├── dependencyinjector/      # Hilt modules (DB, DataStore repo, OkHttpClient bindings)
 ├── data/
-│   ├── local/               # SettingsRepository (DataStore: settings + history)
-│   └── remote/              # ApiService (Retrofit), RetrofitClient
+│   ├── local/               # SettingsRepository (DataStore); AppDB + HistoryDataAccessObject + HistoryEntry (Room)
+│   └── remote/              # ApiService (Retrofit interface), ApiServiceFactory (builds an ApiService per base URL)
 └── ui/
-    ├── screens/             # Upload, Download, History, Settings, Onboarding
+    ├── screens/             # Upload, Download, History, Settings, Onboarding, QRScanner
     ├── components/          # Shared composables
-    ├── viewmodel/           # Upload + Download + Settings view models
+    ├── viewmodel/           # Upload, Download, History, Settings view models
     └── theme/               # Color, Type, Theme (light/dark/system)
 ```
 
@@ -96,6 +98,18 @@ Windows:
 gradlew.bat assembleDebug  # build debug APK
 gradlew.bat installDebug   # build + install APK
 ```
+
+### Testing
+
+The test suite is instrumented (Compose UI tests plus Hilt-injected ViewModel tests), so it needs a connected device or emulator rather than a plain JVM:
+
+```bash
+./gradlew connectedAndroidTest      # run the full suite
+```
+
+To iterate on a single class or method: `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=<FQCN>` (append `#methodName` to target one test).
+
+Tests live under `app/src/androidTest/java/dev/withcapsule/android/`, mirroring `ui/screens/` and `ui/viewmodel/` (`ui/screens/*ComposeTest.kt`, `ui/viewmodel/*InstrumentedTest.kt`). The network layer is mocked with MockK; local storage (Room, DataStore) is exercised for real against an in-memory/on-device store.
 
 ### Release signing
 
